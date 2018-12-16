@@ -1,17 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function init() {
-    const overlays = $(".overlay");
-    overlays.css("height", "0%");
-    overlays.css("width", "100%");
-    overlays.css("position", "fixed");
-    overlays.css("z-index", "1");
-    overlays.css("left", "0");
-    overlays.css("top", "0");
-    overlays.css("overflow-x", "hidden");
-    overlays.css("transition", "0.5s");
-}
-exports.init = init;
 function hideElement(e) {
     e.css("height", "0%");
 }
@@ -30,12 +18,13 @@ function show(...selectors) {
         showElement($(selector));
 }
 exports.show = show;
+exports.overlaySelector = ".cd-overlay";
 function hideAll() {
-    hide(".overlay");
+    hide(exports.overlaySelector);
 }
 exports.hideAll = hideAll;
 function showAll() {
-    show(".overlay");
+    show(exports.overlaySelector);
 }
 exports.showAll = showAll;
 function hideOnly(...selectors) {
@@ -48,4 +37,3 @@ function showOnly(...selectors) {
     show(...selectors);
 }
 exports.showOnly = showOnly;
-$(() => init());

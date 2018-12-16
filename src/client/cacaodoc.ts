@@ -1,21 +1,5 @@
-import { loading, modal } from ".";
-import { getBlob } from "./utils";
-
-const DEFAULT_VIDEO_OPTS = {
-    facingMode: "environment"
-}
-function videoInit(videoId: string = "video", videOpts: MediaTrackConstraints = DEFAULT_VIDEO_OPTS) {
-    var video = <HTMLVideoElement>document.getElementById(videoId);
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-            video: videOpts
-        }).then(stream => {
-            video.srcObject = stream;
-            video.play();
-        });
-    }
-    return video
-}
+import { loading, modal, cam } from ".";
+import { toBlob, toCanvas } from "./utils";
 
 interface CacaoDocResponse {
     id: string,
@@ -47,13 +31,15 @@ export function query(data: Blob): JQueryPromise<CacaoDocResponse> {
 }
 
 $(() => {
-    const vid = videoInit()
+    var vid = cam.elem()
 
     vid.onclick = async function () {
         loading.show()
         vid.pause()
 
-        query(await getBlob(vid)).then(e => {
+        var canvas = toCanvas(vid)
+
+        query(await toBlob(canvas)).then(e => {
             var pred = e.predictions.sort((a, b) => a.probability - a.probability)
             var max = pred[0]
 
@@ -68,13 +54,21 @@ $(() => {
                 case "level3":
                 case "level4":
                 case "level5":
-                    return "The cacao pod is severly infected, immediate disposal is recommended"
+                    return "The cacao pod is severely infected, immediate disposal is recommended"
                 default: return "If you're seeing this then there is an internal error that occured"
             }
         }).then(message => {
-            modal.popup(message)
+            // modal.popup(message)
+            modal.header().text("Results")
+            modal.content().html(`
+            <h1>${message}</h1>
+            <img class="image-fluid" src="${canvas.toDataURL()}">
+            `)
+            modal.show()
         }).always(() => {
             loading.hide()
+        }).fail(() => {
+            modal.popup("Cannot connect to server", "Error!")
         })
     }
 })

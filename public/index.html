@@ -19,8 +19,8 @@
     <!-- Local Dependencies -->
     <!-- <link rel="stylesheet" href="/css/overlay.css"> -->
     <link rel="stylesheet" href="/css/loading-overlay.css">
-    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/global.css">
     <script src="/js/index.js"></script>
 
     <script>
@@ -32,10 +32,13 @@
 
 <body>
     <!-- Main Menu Section -->
-    <div id="cd-menu" class="cd-overlay" style="background: brown">
+    <div id="cd-menu" class="cd-overlay">
 
-        <h1>Main Menu</h1>
-        <div>
+        <div class="cd-header">
+            <h1>Cacao Doc</h1>
+        </div>
+
+        <div class="cd-content">
             <a href="javascript:osm.overlay.showOnly('#cd-activity')">
                 <h1>Start Activity (Rename later)</h1>
             </a>
@@ -46,36 +49,58 @@
                 <h1>Disclaimer</h1>
             </a>
         </div>
+
+        <div class="cd-footer">
+        </div>
+
     </div>
 
     <!-- About Section -->
-    <div id="cd-about" class="cd-overlay" style="background: green">
-        <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-            <h1>Back</h1>
-        </a>
-
-        <div>
-            <p>This is an acknowledgement to the people that made this possible</p>
-        </div>
-    </div>
-
-    <!-- Disclaimer Section -->
-    <div id="cd-disclaimer" class="cd-overlay" style="background: blue">
-        <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-            <h1>Back</h1>
-        </a>
-
-        <div>
-            <p>This is a disclaimer the model is not included yet</p>
-        </div>
-    </div>
-
-    <!-- Main Activity Section -->
-    <div id="cd-activity" class="cd-overlay" style="background: red">
+    <div id="cd-about" class="cd-overlay">
 
         <div class="cd-header">
             <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-                <h1>Back to Menu</h1>
+                <h1>Back</h1>
+            </a>
+        </div>
+
+        <div class="cd-content">
+            <div>
+                <p>This is an acknowledgement to the people that made this possible</p>
+            </div>
+        </div>
+
+        <div class="cd-footer">
+        </div>
+
+    </div>
+
+    <!-- Disclaimer Section -->
+    <div id="cd-disclaimer" class="cd-overlay">
+
+        <div class="cd-header">
+            <a href="javascript:osm.overlay.showOnly('#cd-menu')">
+                <h1>Back</h1>
+            </a>
+        </div>
+
+        <div class="cd-content">
+            <div>
+                <p>This is a disclaimer the model is not included yet</p>
+            </div>
+        </div>
+
+        <div class="cd-footer">
+        </div>
+
+    </div>
+
+    <!-- Main Activity Section -->
+    <div id="cd-activity" class="cd-overlay">
+
+        <div class="cd-header">
+            <a href="javascript:osm.overlay.showOnly('#cd-menu')">
+                <h1>Back</h1>
             </a>
         </div>
 
@@ -84,36 +109,32 @@
         </div>
 
         <div class="cd-footer">
-            <a href="javascript:osm.overlay.show('#cd-modal')">
-                <h1>Show last result</h1>
-            </a>
+            Click the screen to take picture
         </div>
-    </div>
 
-    <div id="cd-activity" class="cd-overlay" style="background: red">
-        <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-            <h1>Back to Menu</h1>
-        </a>
-
-        <video id="video" class="stretch"></video>
-
-        <a href="javascript:osm.overlay.show('#cd-modal')">
-            <h1>Show last result</h1>
-        </a>
     </div>
 
     <!-- Modal Notification Section -->
-    <div id="cd-modal" class="cd-overlay" style="background: rgba(255, 255, 255, 0.11)">
-        <h1 id="cd-modal-title">Results</h1>
-        <h3 id="cd-modal-content">No results yet</h3>
+    <div id="cd-modal" class="cd-overlay">
 
-        <a href="javascript:osm.overlay.hide('#cd-modal')">
-            <h1>Back to Acitvity</h1>
-        </a>
+        <div class="cd-header">
+            Results
+        </div>
+
+        <div class="cd-content">
+            No results yet
+        </div>
+
+        <div class="cd-footer">
+            <a href="javascript:osm.overlay.hide('#cd-modal');osm.cam.play()">
+                <h1>Back to Activity</h1>
+            </a>
+        </div>
+
     </div>
 
     <!-- Loading Screen Section -->
-    <div id="cd-loading" class="cd-overlay" style="background: rgba(255, 255, 255, 0.4)">
+    <div id="cd-loading" class="cd-overlay">
         <div class="loading">
             <div class='uil-ring-css' style='transform:scale(0.79);'>
                 <div></div>

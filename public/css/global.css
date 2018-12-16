@@ -5,7 +5,17 @@ body {
     overflow-y: hidden;
 }
 
-/* Overlay */
+a {
+    color: #50443c;
+    transition: 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: #3d3428;
+}
+
+/* Master Style */
 .cd-overlay {
     height: 0%;
     width: 100%;
@@ -17,26 +27,78 @@ body {
     transition: 0.5s;
 }
 
-/* Overlay C */
 .cd-overlay .cd-header {
     width: 100%;
     height: 10vh;
+    background: #e9e9e971;
 }
 
 .cd-overlay .cd-content {
     width: 100%;
     height: 85vh;
+    background: #e9e9e971;
 }
 
 .cd-overlay .cd-footer {
     width: 100%;
-    height: 5vh;
+    /* height: 5vh; */
+    background: #e9e9e971;
 }
 
-#cd-modal-title {
-    width: 100%;
+/* Main Menu Styles */
+#cd-menu {
+    background: url("https://media.istockphoto.com/photos/cacao-tree-organic-cocoa-fruit-pods-in-nature-picture-id685164922?k=6&m=685164922&s=612x612&w=0&h=KYyORS8xPrSgJMH0DW5rtNUFTE_8GmOKgVmm4QG3Vlw=") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-#cd-modal-content {
-    width: 80vh;
+#cd-menu .cd-header h1 {
+    align-items: center;
+    text-align: center;
+    font-size: 10vh;
+    margin-top: 2vh;
+}
+
+#cd-menu a {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10vh;
+    display: block;
+}
+
+
+/* About and Disclaimer Styles */
+#cd-disclaimer,
+#cd-about {
+    background: url("https://media.istockphoto.com/photos/cacao-tree-organic-cocoa-fruit-pods-in-nature-picture-id685164922?k=6&m=685164922&s=612x612&w=0&h=KYyORS8xPrSgJMH0DW5rtNUFTE_8GmOKgVmm4QG3Vlw=") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#cd-disclaimer .cd-content,
+#cd-about .cd-content {
+    font-size: 5vh;
+    padding: 3vh;
+}
+
+/* Modal Styles */
+#cd-modal {
+    background: #ac6565de
+}
+
+#cd-modal .cd-header {
+    text-align: center;
+    font-size: 10vh;
+}
+
+#cd-modal .cd-content {
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 8vh
 }

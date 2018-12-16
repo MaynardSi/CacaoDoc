@@ -6,5 +6,7 @@ const loading = require("./loading");
 exports.loading = loading;
 const modal = require("./modal");
 exports.modal = modal;
+const cam = require("./cam");
+exports.cam = cam;
 const cacaodoc = require("./cacaodoc");
 exports.cacaodoc = cacaodoc;
