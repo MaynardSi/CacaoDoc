@@ -10,6 +10,7 @@
     <!-- External Dependencies -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
@@ -35,23 +36,25 @@
     <div id="cd-menu" class="cd-overlay">
 
         <div class="cd-header">
-            <h1>Cacao Doc</h1>
+            <h1>Cacao<b>Doc</b></h1>
         </div>
 
         <div class="cd-content">
-            <a href="javascript:osm.overlay.showOnly('#cd-activity')">
-                <h1>Start Activity (Rename later)</h1>
+            <a href="javascript:osm.overlay.showOnly('#cd-activity')" class="btn">
+                START
             </a>
-            <a href="javascript:osm.overlay.showOnly('#cd-about')">
-                <h1>About</h1>
-            </a>
-            <a href="javascript:osm.overlay.showOnly('#cd-disclaimer')">
-                <h1>Disclaimer</h1>
-            </a>
+            <div class="cd-subcontent">
+                <a href="javascript:osm.overlay.showOnly('#cd-about')">
+                    <span>About</span>
+                </a>|
+                <a href="javascript:osm.overlay.showOnly('#cd-disclaimer')">
+                    <span>Disclaimer</span>
+                </a>
+            </div>
         </div>
 
-        <div class="cd-footer">
-        </div>
+        <!-- <div class="cd-footer">
+        </div> -->
 
     </div>
 
@@ -60,17 +63,17 @@
 
         <div class="cd-header">
             <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-                <h1>Back</h1>
+                <i class="fa fa-angle-left" style="font-size:5vh; padding:3% 0% 0% 6%;"></i>
             </a>
         </div>
 
         <div class="cd-content">
             <div>
-                <p>This is about disease detection for Cacao Pods</p>
+                <p>CacaoDoc is an Automated Tool for Disease Detection and Assessment for Black Pod Rot in Cacao</p>
                 <br>
-                <p>Example of disease is Black Pod Rot</p>
+                <p>CacaoDoc automatically detects and assesses the infection level of Black Pod Rot in cacao through image processing and machine learning</p>
                 <br>
-                <p>This is built atop AutoDiDact???</p>
+                <!-- <p>This is built atop AutoDiDact???</p> -->
             </div>
         </div>
 
@@ -84,13 +87,15 @@
 
         <div class="cd-header">
             <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-                <h1>Back</h1>
+                <i class="fa fa-angle-left" style="font-size:5vh; padding:3% 0% 0% 6%;"></i>
             </a>
         </div>
 
         <div class="cd-content">
             <div>
                 <h1>Disclaimer:</h1>
+                <p>This is an initial prototype.</p>
+                <br>
                 <p>The actual model for disease detection is not yet connected to this web application.</p>
             </div>
         </div>
@@ -105,16 +110,21 @@
 
         <div class="cd-header">
             <a href="javascript:osm.overlay.showOnly('#cd-menu')">
-                <h1>Back</h1>
+                <i class="fa fa-angle-left" style="font-size:5vh; padding:3% 0% 0% 6%;"></i>
             </a>
         </div>
 
         <div class="cd-content">
-            <video id="video" class="stretch"></video>
+            <div class="outer-container">
+                <div class="inner-container">
+                    <div class="video-overlay"><i class="fa fa-camera" style="font-size:5vh"></i></div>
+                    <video id="video" class="stretch"></video>
+                </div>
+            </div>
         </div>
 
-        <div class="cd-footer">
-            <h3>Click the screen to take picture</h3>
+        <div class="cd-footer"> 
+            <!-- <h3>Click the screen to take picture</h3> -->
         </div>
 
     </div>
